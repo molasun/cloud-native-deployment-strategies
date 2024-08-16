@@ -5,17 +5,17 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: gitops
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
     path: helm/quarkus-helm-umbrella/chart
-    repoURL:  https://github.com/molasun/cloud-native-deployment-strategies.git
+    repoURL: https://github.com/molasun/cloud-native-deployment-strategies.git
     targetRevision: rollouts
     helm:
       parameters:
-      - name: "global.namespace"
-        value: gitops
+        - name: "global.namespace"
+          value: gitops
       valueFiles:
         - values/values-rollouts-blue-green.yaml
   project: default
